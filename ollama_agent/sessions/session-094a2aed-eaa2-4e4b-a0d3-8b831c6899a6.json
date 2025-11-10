@@ -1,0 +1,171 @@
+{
+  "id": "094a2aed-eaa2-4e4b-a0d3-8b831c6899a6",
+  "appName": "weather_agent",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-39498a10-6542-4ff7-ad44-88be73c924d3",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "bba66555-31f8-4e5d-b95b-ad11ce32fddc",
+      "timestamp": 1762783522.746672
+    },
+    {
+      "modelVersion": "ollama_chat/gpt-oss:120b-cloud",
+      "content": {
+        "parts": [
+          {
+            "text": "Hello! 👋  \nI’m Weather Agent, here to help you get the current weather for any city you’re interested in. Just let me know the city name, and I’ll fetch the latest forecast for you."
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cachedContentTokenCount": 0,
+        "candidatesTokenCount": 95,
+        "promptTokenCount": 208,
+        "totalTokenCount": 303
+      },
+      "invocationId": "e-39498a10-6542-4ff7-ad44-88be73c924d3",
+      "author": "weather_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "fa0643e1-9148-4482-98d3-4182271a2153",
+      "timestamp": 1762783522.760062
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "for berlin please"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-a28e1318-a378-4d39-bbb2-f142bf953007",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "97ba36c5-fc94-44fc-8b60-290341cd1d0c",
+      "timestamp": 1762783528.346637
+    },
+    {
+      "modelVersion": "ollama_chat/gpt-oss:120b-cloud",
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "11be106d-b647-440e-8610-1f1109a9f50d",
+              "args": {
+                "city": "Berlin"
+              },
+              "name": "get_current_weather"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cachedContentTokenCount": 0,
+        "candidatesTokenCount": 48,
+        "promptTokenCount": 265,
+        "totalTokenCount": 313
+      },
+      "invocationId": "e-a28e1318-a378-4d39-bbb2-f142bf953007",
+      "author": "weather_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "ed77a130-c5a4-4d09-a344-4cf39d84743e",
+      "timestamp": 1762783528.347345
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "11be106d-b647-440e-8610-1f1109a9f50d",
+              "name": "get_current_weather",
+              "response": {
+                "status": "success",
+                "city": "Berlin",
+                "weather": "sunny"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-a28e1318-a378-4d39-bbb2-f142bf953007",
+      "author": "weather_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "119d93e4-73c1-48a4-9cbb-3311b3a3c944",
+      "timestamp": 1762783531.462037
+    },
+    {
+      "modelVersion": "ollama_chat/gpt-oss:120b-cloud",
+      "content": {
+        "parts": [
+          {
+            "text": "Here’s the latest weather for **Berlin**:\n\n- **Condition:** Sunny  \n\nEnjoy your day! If you need more details (like temperature, wind, or a forecast for another location), just let me know."
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cachedContentTokenCount": 0,
+        "candidatesTokenCount": 79,
+        "promptTokenCount": 292,
+        "totalTokenCount": 371
+      },
+      "invocationId": "e-a28e1318-a378-4d39-bbb2-f142bf953007",
+      "author": "weather_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "bb8e31b4-3383-44a3-b9ad-609c2a5c76de",
+      "timestamp": 1762783531.47918
+    }
+  ],
+  "lastUpdateTime": 1762783531.47918
+}
