@@ -1,0 +1,185 @@
+{
+  "id": "24b09166-f5ee-4841-be79-8f5d004ba9ce",
+  "appName": "currency_tools_agent",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "I want to convert 500 US Dollars to Euros using my Platinum Credit Card. How much will I receive?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-92ed9883-12b2-47d8-b881-f9088dce27ff",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "e6008330-e53a-4728-af3a-a35fa69f30ba",
+      "timestamp": 1762877373.6181
+    },
+    {
+      "modelVersion": "ollama_chat/gpt-oss:120b-cloud",
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "50090fb3-d9d6-4398-83b3-1bd3cb675b8d",
+              "args": {
+                "method": "Platinum Credit Card"
+              },
+              "name": "get_fee_for_payment_method"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cachedContentTokenCount": 0,
+        "candidatesTokenCount": 113,
+        "promptTokenCount": 588,
+        "totalTokenCount": 701
+      },
+      "invocationId": "e-92ed9883-12b2-47d8-b881-f9088dce27ff",
+      "author": "currency_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "062d0264-ec13-4f4d-9c8c-438714e0fe29",
+      "timestamp": 1762877373.620745
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "50090fb3-d9d6-4398-83b3-1bd3cb675b8d",
+              "name": "get_fee_for_payment_method",
+              "response": {
+                "status": "success",
+                "fee_percentage": 0.02
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-92ed9883-12b2-47d8-b881-f9088dce27ff",
+      "author": "currency_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "20702300-8b67-42ed-b17a-711ca048ddc6",
+      "timestamp": 1762877376.682997
+    },
+    {
+      "modelVersion": "ollama_chat/gpt-oss:120b-cloud",
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "b074cbfa-8c0a-4409-b33c-efd52d4138de",
+              "args": {
+                "base_currency": "USD",
+                "target_currency": "EUR"
+              },
+              "name": "get_exchange_rate"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cachedContentTokenCount": 0,
+        "candidatesTokenCount": 51,
+        "promptTokenCount": 611,
+        "totalTokenCount": 662
+      },
+      "invocationId": "e-92ed9883-12b2-47d8-b881-f9088dce27ff",
+      "author": "currency_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "2d0a7ff0-2cc9-4b2d-b494-916d743935f6",
+      "timestamp": 1762877376.70179
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "b074cbfa-8c0a-4409-b33c-efd52d4138de",
+              "name": "get_exchange_rate",
+              "response": {
+                "status": "success",
+                "rate": 0.93
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-92ed9883-12b2-47d8-b881-f9088dce27ff",
+      "author": "currency_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "40da5fdb-e474-479c-9a37-a0da1c6bb7d0",
+      "timestamp": 1762877377.801882
+    },
+    {
+      "modelVersion": "ollama_chat/gpt-oss:120b-cloud",
+      "content": {
+        "parts": [
+          {
+            "text": "**You will receive:** **≈ 455.70 EUR**\n\n**How the amount was calculated**\n\n1. **Transaction fee:**  \n   *Fee percentage for a Platinum Credit Card* = **2 %** (0.02)  \n   Fee amount = 500 USD × 0.02 = **10 USD**\n\n2. **Amount after fee:**  \n   500 USD – 10 USD = **490 USD** remaining to be converted\n\n3. **Exchange rate:**  \n   1 USD = **0.93 EUR** (USD → EUR rate)\n\n4. **Convert to euros:**  \n   490 USD × 0.93 EUR/USD = **455.70 EUR**\n\nSo, after deducting the 2 % credit‑card fee, your 500 USD will be converted to approximately **455.70 EUR**."
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cachedContentTokenCount": 0,
+        "candidatesTokenCount": 268,
+        "promptTokenCount": 633,
+        "totalTokenCount": 901
+      },
+      "invocationId": "e-92ed9883-12b2-47d8-b881-f9088dce27ff",
+      "author": "currency_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "34627c54-c5d1-42c8-9a89-d11a45d5b098",
+      "timestamp": 1762877377.821262
+    }
+  ],
+  "lastUpdateTime": 1762877377.821262
+}

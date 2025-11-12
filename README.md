@@ -17,6 +17,15 @@ This project is using `uv` as package manager, so please install it.
 ```bash
 # Starts a FastAPI server with Web UI for agents.
 > uv run adk web
+
+INFO:     Started server process [29954]
+INFO:     Waiting for application startup.
+
++-----------------------------------------------------------------------------+
+| ADK Web Server started                                                      |
+|                                                                             |
+| For local testing, access at http://127.0.0.1:8000.                         |
++-----------------------------------------------------------------------------+
 ```
 
 ```bash

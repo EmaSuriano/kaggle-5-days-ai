@@ -1,10 +1,14 @@
 from google.adk.agents.llm_agent import Agent
 from google.adk.models.lite_llm import LiteLlm
 from google.adk.tools import AgentTool, google_search
+from google.adk.models.google_llm import Gemini
+
+ollama_model = LiteLlm(model="ollama_chat/gpt-oss:120b-cloud")
+gemini_model = Gemini(model="gemini-2.5-flash-lite")
 
 research_agent = Agent(
     name="ResearchAgent",
-    model="gemini-2.5-flash-lite",
+    model=gemini_model,
     instruction="""You are a specialized research agent. Your only job is to use the
     google_search tool to find 2-3 pieces of relevant information on the given topic and present the findings with citations.""",
     tools=[google_search],
@@ -13,7 +17,7 @@ research_agent = Agent(
 
 summarizer_agent = Agent(
     name="SummarizerAgent",
-    model=LiteLlm(model="ollama_chat/gpt-oss:120b-cloud"),
+    model=ollama_model,
     # The instruction is modified to request a bulleted list for a clear output format.
     instruction="""Read the provided research findings: {research_findings}
 Create a concise summary as a bulleted list with 3-5 key points.""",
@@ -22,7 +26,7 @@ Create a concise summary as a bulleted list with 3-5 key points.""",
 
 root_agent = Agent(
     name="ResearchCoordinator",
-    model=LiteLlm(model="ollama_chat/gpt-oss:120b-cloud"),
+    model=ollama_model,
     # This instruction tells the root agent HOW to use its tools (which are the other agents).
     instruction="""You are a research coordinator. Your goal is to answer the user's query by orchestrating a workflow.
 1. First, you MUST call the `ResearchAgent` tool to find relevant information on the topic provided by the user.
